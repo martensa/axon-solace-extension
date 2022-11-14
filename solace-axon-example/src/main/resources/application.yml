@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: SolaceAxonExample
+
+axon:
+  solace:
+    defaultTopic: Axon/Events
+    service:
+      vpnName: default
+      transport:
+        hostList: localhost:55554
+        keepAliveInterval: 60000
+      authentication:
+        scheme: AUTHENTICATION_SCHEME_BASIC
+        basic:
+          username: default
+          password: default
+      client:
+        name: solace-axon-example
+    publisher:
+      enabled: true
+      backPressure:
+        strategy: ELASTIC
+        bufferCapacity: 80
+      confirmation-mode: auto_ack
+      message-publisher-cache-size: 10
+      terminate-timeout: 10000
+    handler:
+      eventProcessorMode: pooled_streaming
+      deliveryConfirmationTimeOutInMilliseconds: 20000
+
+server:
+  port: 8070

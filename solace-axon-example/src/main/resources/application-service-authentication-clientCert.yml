@@ -1,0 +1,10 @@
+axon:
+  solace:
+    service:
+      authentication:
+        scheme: AUTHENTICATION_SCHEME_CLIENT_CERT
+        clientCert:
+          privateKeyPassword: solace
+          keyStorePath: keystore.jks
+          keyStorePassword: solace
+          keyStoreFormat: jks

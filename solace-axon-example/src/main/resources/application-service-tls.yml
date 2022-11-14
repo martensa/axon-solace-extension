@@ -1,0 +1,6 @@
+axon:
+  solace:
+      tls:
+        trustStorePath: truststore.jks
+        trustStorePassword: solace
+        trustStoreFormat: jks
